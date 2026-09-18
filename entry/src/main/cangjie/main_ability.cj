@@ -15,6 +15,7 @@ class MainAbility <: UIAbility {
 
     public override func onCreate(want: Want, launchParam: LaunchParam): Unit {
         Hilog.info(1, "Cangjie", "MainAbility OnCreated.${want.abilityName}")
+        appContext = Some(this.context)
         match (launchParam.launchReason) {
             case LaunchReason.StartAbility => Hilog.info(1, "Cangjie", "START_ABILITY")
             case _ => ()
