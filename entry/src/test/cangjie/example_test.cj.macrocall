@@ -1,0 +1,61 @@
+package ohos_app_cangjie_entry_local_test
+
+import std.unittest.TestClass
+import std.unittest.TestPackage
+import std.unittest.TestSuite
+import std.unittest.UnitTestCase
+import std.unittest.common.Configuration
+import std.unittest.testmacro.Test
+import std.unittest.testmacro.TestCase
+
+/* ===== Emitted by MacroCall @Test in example_test.cj:11:1 ===== */
+/* 11.1 */@Attribute[TEST_GENERATED] class TestExample00 <: TestClass {
+/* 11.2 */    @Attribute[TestCase_0]
+/* 11.3 */    func test00(): Unit {
+/* 11.4 */        unittest()
+/* 11.5 */    }
+/* 11.6 */    
+/* 11.7 */    init() {
+/* 11.8 */    }
+/* 11.9 */    private func classConfiguration(): Configuration {
+/* 11.10 */        let configuration = Configuration()
+/* 11.11 */        
+/* 11.12 */        return configuration
+/* 11.13 */    }
+/* 11.14 */    public override func asTestSuite(): TestSuite {
+/* 11.15 */        
+/* 11.16 */        let suiteConfiguration = classConfiguration()
+/* 11.17 */        let suiteBuilder = TestSuite.builder("TestExample00").configure(suiteConfiguration)
+/* 11.18 */        
+/* 11.19 */        { => let caseConfig = Configuration()
+/* 11.20 */            
+/* 11.21 */            let test00TestFunc = { => test00();() }
+/* 11.22 */            suiteBuilder.add(
+/* 11.23 */            UnitTestCase.create(
+/* 11.24 */            "test00",
+/* 11.25 */            configuration: caseConfig,
+/* 11.26 */            body: test00TestFunc
+/* 11.27 */            )
+/* 11.28 */            )
+/* 11.29 */            
+/* 11.30 */        }()
+/* 11.31 */        
+/* 11.32 */        return suiteBuilder.build()
+/* 11.33 */    }
+/* 11.34 */    private func inheritedFromClassAnnotatedByTestTemplate < T >(): TestSuite where T <: TestClass {
+/* 11.35 */        throw Exception("Unreachable code")
+/* 11.36 */    }
+/* 11.37 */}
+/* 11.38 */
+/* 11.39 */
+/* 11.40 */interface TestPackageExtension_TestExample00 {
+/* 11.41 */    func registerTestExample00(): Unit
+/* 11.42 */}
+/* 11.43 */extend TestPackage <: TestPackageExtension_TestExample00 {
+/* 11.44 */    @Attribute[TEST_REGISTER]
+/* 11.45 */    public func registerTestExample00() {
+/* 11.46 */        registerSuite({ => TestExample00().asTestSuite() })
+/* 11.47 */    }
+/* 11.48 */}
+/* 11.49 */
+/* ===== End of the Emit ===== */

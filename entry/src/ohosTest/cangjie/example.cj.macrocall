@@ -1,0 +1,14 @@
+/**
+ * Created on 2025/2/26
+ */
+package ohos_app_cangjie_entry_test
+
+import std.unittest.expectEqual
+import std.unittest.testmacro.Expect
+
+func unittest() {
+    let a = "abc"
+    let b = "b"
+    /* ===== Emitted by MacroCall @Expect in example.cj:12:5 ===== *//* 12.1 */ expectEqual("a.contains(b)", "true", a.contains(b), true, isDelta: false,) /* ===== End of the Emit ===== */
+    /* ===== Emitted by MacroCall @Expect in example.cj:13:5 ===== *//* 13.1 */ expectEqual("a", "a", a, a, isDelta: false,) /* ===== End of the Emit ===== */
+}
