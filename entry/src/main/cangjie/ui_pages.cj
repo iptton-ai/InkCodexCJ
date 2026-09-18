@@ -161,12 +161,6 @@ class CollectionPage {
                     if (AppState.instance.sorted().isEmpty()) {
                         EmptyShore(title: T.shelfEmptyTitle, hint: T.shelfEmptyHint)
                     }
-                    } else {
-                        TimelineList(entryIds: this.sortedIds(), onTapEntry: { id: String =>
-                            navParam = id
-                            stackPush(RN_DETAIL)
-                        })
-                }
                 } else {
                     Scroll() {
                         Column() {
@@ -243,43 +237,30 @@ class ShelfCompartment {
     func imgBranch(aid: String, isz: Float64) {
         if (aid == "otter") {
             Image(@rawfile("images/otter.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "octo") {
+        } else if (aid == "octo") {
             Image(@rawfile("images/octo.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "penguin") {
+        } else if (aid == "penguin") {
             Image(@rawfile("images/penguin.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "turtle") {
+        } else if (aid == "turtle") {
             Image(@rawfile("images/turtle.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "bubble") {
+        } else if (aid == "bubble") {
             Image(@rawfile("images/bubble.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "whale") {
+        } else if (aid == "whale") {
             Image(@rawfile("images/whale.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "jelly") {
+        } else if (aid == "jelly") {
             Image(@rawfile("images/jelly.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "hermit") {
+        } else if (aid == "hermit") {
             Image(@rawfile("images/hermit.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "crab") {
+        } else if (aid == "crab") {
             Image(@rawfile("images/crab.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "nautilus") {
+        } else if (aid == "nautilus") {
             Image(@rawfile("images/nautilus.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "albatross") {
+        } else if (aid == "albatross") {
             Image(@rawfile("images/albatross.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "angler") {
+        } else if (aid == "angler") {
             Image(@rawfile("images/angler.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "ray") {
+        } else if (aid == "ray") {
             Image(@rawfile("images/ray.png")).width(isz).height(isz)
-        }
         } else {
             Image(@rawfile("images/gull.png")).width(isz).height(isz)
         }
@@ -289,7 +270,6 @@ class ShelfCompartment {
         Column(space: 6) {
             Row(space: 9) {
                 this.imgBranch(this.animalId, 34.0)
-                    .borderRadius(10).objectFit(ImageFit.Cover)
                 Text("${this.animal().species} · ${this.animal().name}")
                     .fontSize(14).fontWeight(FontWeight.W700).fontColor(this.animal().ink)
                     .layoutWeight(1)
@@ -399,7 +379,6 @@ class EntryDetailPage {
             Column() {
                 if (this.entry().isSome()) {
                     EntryBodyView(entryId: navParam)
-                }
                 } else {
                     Column(space: 10) {
                         Text("🌊").fontSize(36)

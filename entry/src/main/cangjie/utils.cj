@@ -58,11 +58,11 @@ func rawfileRes(path: String): AppResource {
 // 动物头像（14 选 1）：emoji 徽章（@rawfile 需字面量且深层上下文不可注入，用 emoji 兜底）。
 @Component
 class AnimalImg {
-    @Prop var id: String
+    @Prop var animalId: String
     @Prop var imgSize: Float64
 
     func emoji(): String {
-        match (id) {
+        match (animalId) {
             case "otter" => "🦦"
             case "octo" => "🐙"
             case "penguin" => "🐧"
@@ -92,36 +92,36 @@ class AnimalImg {
 // 纸纹底板（14 选 1）。
 @Component
 class TexImg {
-    var id: String = "otter"
+    var texId: String = "otter"
     var w: Float64 = 400.0
     var h: Float64 = 520.0
 
     func build() {
-        if (id == "otter") {
+        if (texId == "otter") {
             Image(@rawfile("images/tex_otter.png")).width(w).height(h)
-        } else if (id == "octo") {
+        } else if (texId == "octo") {
             Image(@rawfile("images/tex_octo.png")).width(w).height(h)
-        } else if (id == "penguin") {
+        } else if (texId == "penguin") {
             Image(@rawfile("images/tex_penguin.png")).width(w).height(h)
-        } else if (id == "turtle") {
+        } else if (texId == "turtle") {
             Image(@rawfile("images/tex_turtle.png")).width(w).height(h)
-        } else if (id == "bubble") {
+        } else if (texId == "bubble") {
             Image(@rawfile("images/tex_bubble.png")).width(w).height(h)
-        } else if (id == "whale") {
+        } else if (texId == "whale") {
             Image(@rawfile("images/tex_whale.png")).width(w).height(h)
-        } else if (id == "jelly") {
+        } else if (texId == "jelly") {
             Image(@rawfile("images/tex_jelly.png")).width(w).height(h)
-        } else if (id == "hermit") {
+        } else if (texId == "hermit") {
             Image(@rawfile("images/tex_hermit.png")).width(w).height(h)
-        } else if (id == "crab") {
+        } else if (texId == "crab") {
             Image(@rawfile("images/tex_crab.png")).width(w).height(h)
-        } else if (id == "nautilus") {
+        } else if (texId == "nautilus") {
             Image(@rawfile("images/tex_nautilus.png")).width(w).height(h)
-        } else if (id == "albatross") {
+        } else if (texId == "albatross") {
             Image(@rawfile("images/tex_albatross.png")).width(w).height(h)
-        } else if (id == "angler") {
+        } else if (texId == "angler") {
             Image(@rawfile("images/tex_angler.png")).width(w).height(h)
-        } else if (id == "ray") {
+        } else if (texId == "ray") {
             Image(@rawfile("images/tex_ray.png")).width(w).height(h)
         } else {
             Image(@rawfile("images/tex_gull.png")).width(w).height(h)

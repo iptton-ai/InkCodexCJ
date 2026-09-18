@@ -93,43 +93,30 @@ class MailCard {
     func imgBranch(aid: String, isz: Float64) {
         if (aid == "otter") {
             Image(@rawfile("images/otter.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "octo") {
+        } else if (aid == "octo") {
             Image(@rawfile("images/octo.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "penguin") {
+        } else if (aid == "penguin") {
             Image(@rawfile("images/penguin.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "turtle") {
+        } else if (aid == "turtle") {
             Image(@rawfile("images/turtle.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "bubble") {
+        } else if (aid == "bubble") {
             Image(@rawfile("images/bubble.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "whale") {
+        } else if (aid == "whale") {
             Image(@rawfile("images/whale.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "jelly") {
+        } else if (aid == "jelly") {
             Image(@rawfile("images/jelly.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "hermit") {
+        } else if (aid == "hermit") {
             Image(@rawfile("images/hermit.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "crab") {
+        } else if (aid == "crab") {
             Image(@rawfile("images/crab.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "nautilus") {
+        } else if (aid == "nautilus") {
             Image(@rawfile("images/nautilus.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "albatross") {
+        } else if (aid == "albatross") {
             Image(@rawfile("images/albatross.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "angler") {
+        } else if (aid == "angler") {
             Image(@rawfile("images/angler.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "ray") {
+        } else if (aid == "ray") {
             Image(@rawfile("images/ray.png")).width(isz).height(isz)
-        }
         } else {
             Image(@rawfile("images/gull.png")).width(isz).height(isz)
         }
@@ -150,8 +137,6 @@ class MailCard {
                         .fontSize(12.5).fontColor(0xFF5D4037)
                         .layoutWeight(1)
                     this.imgBranch(this.mailOr().animalId, 34.0)
-                        .objectFit(ImageFit.Cover)
-                        .border(width: 1.0, color: withAlpha(AnimalSpec.byId(this.mailOr().animalId).accent, 0.6))
                 }
                 .width(100.percent)
                 Blank().height(6)
@@ -209,10 +194,8 @@ class MonthlyPage {
                 if (a[0] > b[0]) { Ordering.LT } else { Ordering.GT }
             } else if (a[1] > b[1]) {
                 Ordering.LT
-            }
             } else if (a[1] < b[1]) {
                 Ordering.GT
-            }
             } else {
                 Ordering.EQ
             }
@@ -255,7 +238,6 @@ class MonthlyPage {
                     .width(100.percent)
                     .layoutWeight(1)
                     .justifyContent(FlexAlign.Center)
-                }
                 } else {
                     List(space: 16) {
                         ForEach(this.months(), itemGeneratorFunc: {
@@ -556,43 +538,30 @@ class DexCard {
     func imgBranch(aid: String, isz: Float64) {
         if (aid == "otter") {
             Image(@rawfile("images/otter.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "octo") {
+        } else if (aid == "octo") {
             Image(@rawfile("images/octo.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "penguin") {
+        } else if (aid == "penguin") {
             Image(@rawfile("images/penguin.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "turtle") {
+        } else if (aid == "turtle") {
             Image(@rawfile("images/turtle.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "bubble") {
+        } else if (aid == "bubble") {
             Image(@rawfile("images/bubble.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "whale") {
+        } else if (aid == "whale") {
             Image(@rawfile("images/whale.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "jelly") {
+        } else if (aid == "jelly") {
             Image(@rawfile("images/jelly.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "hermit") {
+        } else if (aid == "hermit") {
             Image(@rawfile("images/hermit.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "crab") {
+        } else if (aid == "crab") {
             Image(@rawfile("images/crab.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "nautilus") {
+        } else if (aid == "nautilus") {
             Image(@rawfile("images/nautilus.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "albatross") {
+        } else if (aid == "albatross") {
             Image(@rawfile("images/albatross.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "angler") {
+        } else if (aid == "angler") {
             Image(@rawfile("images/angler.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "ray") {
+        } else if (aid == "ray") {
             Image(@rawfile("images/ray.png")).width(isz).height(isz)
-        }
         } else {
             Image(@rawfile("images/gull.png")).width(isz).height(isz)
         }
@@ -638,8 +607,6 @@ class DexCard {
         Column(space: 8) {
             if (this.unlocked()) {
                 this.imgBranch(this.animalId, 74.0)
-                    .borderRadius(37).objectFit(ImageFit.Cover)
-            }
             } else {
                 Text("❓")
                     .fontSize(30)
@@ -709,7 +676,6 @@ class SearchPage {
                     .width(100.percent)
                     .layoutWeight(1)
                     .justifyContent(FlexAlign.Center)
-                }
                 } else {
                     TimelineList(entryIds: this.results(), onTapEntry: { id: String =>
                         navParam = id

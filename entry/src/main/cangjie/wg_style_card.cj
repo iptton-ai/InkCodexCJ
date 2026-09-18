@@ -239,43 +239,30 @@ class PaperBase {
     func texBranch(aid: String, tw: Float64, th: Float64) {
         if (aid == "otter") {
             Image(@rawfile("images/tex_otter.png")).width(tw).height(th)
-        }
-        }         else if (aid == "octo") {
+        } else if (aid == "octo") {
             Image(@rawfile("images/tex_octo.png")).width(tw).height(th)
-        }
-        }         else if (aid == "penguin") {
+        } else if (aid == "penguin") {
             Image(@rawfile("images/tex_penguin.png")).width(tw).height(th)
-        }
-        }         else if (aid == "turtle") {
+        } else if (aid == "turtle") {
             Image(@rawfile("images/tex_turtle.png")).width(tw).height(th)
-        }
-        }         else if (aid == "bubble") {
+        } else if (aid == "bubble") {
             Image(@rawfile("images/tex_bubble.png")).width(tw).height(th)
-        }
-        }         else if (aid == "whale") {
+        } else if (aid == "whale") {
             Image(@rawfile("images/tex_whale.png")).width(tw).height(th)
-        }
-        }         else if (aid == "jelly") {
+        } else if (aid == "jelly") {
             Image(@rawfile("images/tex_jelly.png")).width(tw).height(th)
-        }
-        }         else if (aid == "hermit") {
+        } else if (aid == "hermit") {
             Image(@rawfile("images/tex_hermit.png")).width(tw).height(th)
-        }
-        }         else if (aid == "crab") {
+        } else if (aid == "crab") {
             Image(@rawfile("images/tex_crab.png")).width(tw).height(th)
-        }
-        }         else if (aid == "nautilus") {
+        } else if (aid == "nautilus") {
             Image(@rawfile("images/tex_nautilus.png")).width(tw).height(th)
-        }
-        }         else if (aid == "albatross") {
+        } else if (aid == "albatross") {
             Image(@rawfile("images/tex_albatross.png")).width(tw).height(th)
-        }
-        }         else if (aid == "angler") {
+        } else if (aid == "angler") {
             Image(@rawfile("images/tex_angler.png")).width(tw).height(th)
-        }
-        }         else if (aid == "ray") {
+        } else if (aid == "ray") {
             Image(@rawfile("images/tex_ray.png")).width(tw).height(th)
-        }
         } else {
             Image(@rawfile("images/tex_gull.png")).width(tw).height(th)
         }
@@ -442,7 +429,6 @@ class StickerView {
                     c.strokeStyle = strokeOf(this.tint)
                     c.lineWidth = Some(s * 0.05)
                     c.stroke()
-                }
                 } else if (id == "shell") {
                     c.beginPath()
                     c.moveTo(0.14 * s, 0.78 * s)
@@ -459,7 +445,6 @@ class StickerView {
                         drawLine(c, 0.5 * s, 0.16 * s, 0.5 * s + dx * s, 0.76 * s, this.tint, s * 0.045)
                     }
                     c.lineCap = Some("butt")
-                }
                 } else if (id == "starfish") {
                     c.beginPath()
                     var i: Int64 = 0
@@ -470,7 +455,6 @@ class StickerView {
                         let py = 0.5 * s + sin(ang) * rr
                         if (i == 0) {
                             c.moveTo(px, py)
-                        }
                         } else {
                             c.lineTo(px, py)
                         }
@@ -482,7 +466,6 @@ class StickerView {
                     c.strokeStyle = strokeOf(this.tint)
                     c.lineWidth = Some(s * 0.055)
                     c.stroke()
-                }
                 } else if (id == "stamp") {
                     let hh = s * 0.82
                     fillRoundRect(c, 0.0, 0.0, s, hh, 2.0, withAlpha(this.tint, 0.30))
@@ -493,7 +476,6 @@ class StickerView {
                         k += 1
                     }
                     strokeRoundRect(c, rw * 0.6, rw * 0.6, s - 1.2 * rw, hh - 1.2 * rw, 1.0, this.tint, s * 0.045)
-                }
                 } else if (id == "tape") {
                     c.save()
                     c.translate(s / 2.0, s / 2.0)
@@ -748,13 +730,11 @@ class FooterView {
                     Text(this.signature).fontSize(12.0 * this.k()).fontColor(withAlpha(this.ink, 0.75))
                     Blank().width(64.0 * this.k())
                 }.width(100.percent)
-            }
             } else if (this.specFooter == 1) {
                 // bookish：右对齐 —— 签名
                 Text("—— ${this.sigName()}")
                     .fontSize(13.5 * this.k()).fontColor(withAlpha(this.ink, 0.75))
                     .width(100.percent).textAlign(TextAlign.End)
-            }
             } else if (this.specFooter == 2) {
                 // nordic：细分隔线 + 名字居左日期居右
                 Column(space: 12.0 * this.k()) {
@@ -782,12 +762,10 @@ class FooterView {
                 // doodle：{name} 画于{date}
                 Text(T.doodleFooter(this.sigName(), this.dateStr))
                     .fontSize(12.5 * this.k()).fontColor(withAlpha(this.ink, 0.7))
-            }
             } else if (this.specFooter == 5) {
                 // posterDate：居中超小字
                 Text(this.dateSig()).fontSize(10.5 * this.k()).fontColor(withAlpha(this.ink, 0.55))
                     .width(100.percent).textAlign(TextAlign.Center)
-            }
             } else if (this.specFooter == 6) {
                 // glowTrail：光点行 + 居中小日期
                 Column(space: 8.0 * this.k()) {
@@ -813,29 +791,25 @@ class FooterView {
                 Text(T.gridCountFooter(runeCount(this.bodyText), this.dateStr))
                     .fontSize(11.0 * this.k()).fontColor(withAlpha(this.ink, 0.6))
                     .width(100.percent).textAlign(TextAlign.Center)
-            }
             } else if (this.specFooter == 9) {
                 // chartCoord：坐标
                 Text(this.chartCoordText())
                     .fontSize(11.0 * this.k()).fontColor(withAlpha(this.ink, 0.65))
-            }
             } else if (this.specFooter == 10) {
                 // postmark：SEA POST
                 Text("${T.seaPost} · ${this.dateSig()}")
                     .fontSize(11.0 * this.k()).fontColor(withAlpha(this.ink, 0.65))
-            }
             } else if (this.specFooter == 11) {
                 // depth：深度
                 Text(this.depthText())
                     .fontSize(11.5 * this.k()).fontColor(withAlpha(this.ink, 0.75))
-            }
             } else if (this.specFooter == 12) {
                 // rhyme：韵目代日 + 电码
                 Column(space: 4.0 * this.k()) {
                     Text("${this.dateSig()} · ${rhymeChar()}日")
                         .fontSize(11.5 * this.k()).fontColor(withAlpha(this.ink, 0.75))
                     Text(this.telegramCode()).fontSize(9.0 * this.k()).fontColor(withAlpha(this.accent, 0.55))
-            }
+                }
             } else {
                 // tide：潮汐时刻
                 Text(this.tideText())
@@ -887,7 +861,6 @@ class FooterView {
             }
             if (acc == "") {
                 acc = s
-            }
             } else {
                 acc = "${acc} ${s}"
             }
@@ -1028,7 +1001,6 @@ class EditablePaper {
                         Text(T.moodLine(moodLabelOf(this.moodKey)))
                             .fontSize(this.fs() * 0.78)
                             .fontColor(this.animal().accent)
-                    }
                     } else {
                         Text(T.markMoodInline)
                             .fontSize(14.0)

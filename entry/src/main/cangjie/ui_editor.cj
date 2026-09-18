@@ -147,7 +147,6 @@ class EditorPage {
                         Text(T.moodLine(moodLabelOf(this.moodKey)))
                             .fontSize(this.fs() * 0.78)
                             .fontColor(this.animal().accent)
-                    }
                     } else {
                         Text(T.markMoodInline)
                             .fontSize(14.0)
@@ -257,43 +256,30 @@ class EditorPage {
     func imgBranch(aid: String, isz: Float64) {
         if (aid == "otter") {
             Image(@rawfile("images/otter.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "octo") {
+        } else if (aid == "octo") {
             Image(@rawfile("images/octo.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "penguin") {
+        } else if (aid == "penguin") {
             Image(@rawfile("images/penguin.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "turtle") {
+        } else if (aid == "turtle") {
             Image(@rawfile("images/turtle.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "bubble") {
+        } else if (aid == "bubble") {
             Image(@rawfile("images/bubble.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "whale") {
+        } else if (aid == "whale") {
             Image(@rawfile("images/whale.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "jelly") {
+        } else if (aid == "jelly") {
             Image(@rawfile("images/jelly.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "hermit") {
+        } else if (aid == "hermit") {
             Image(@rawfile("images/hermit.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "crab") {
+        } else if (aid == "crab") {
             Image(@rawfile("images/crab.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "nautilus") {
+        } else if (aid == "nautilus") {
             Image(@rawfile("images/nautilus.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "albatross") {
+        } else if (aid == "albatross") {
             Image(@rawfile("images/albatross.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "angler") {
+        } else if (aid == "angler") {
             Image(@rawfile("images/angler.png")).width(isz).height(isz)
-        }
-        }         else if (aid == "ray") {
+        } else if (aid == "ray") {
             Image(@rawfile("images/ray.png")).width(isz).height(isz)
-        }
         } else {
             Image(@rawfile("images/gull.png")).width(isz).height(isz)
         }
@@ -308,7 +294,6 @@ class EditorPage {
                         id: String, idx: Int64 =>
                         Column() {
                             this.imgBranch(id, 48.0)
-                                .borderRadius(10).objectFit(ImageFit.Cover)
                         }
                         .padding(3.0)
                         .borderRadius(14)
@@ -382,9 +367,7 @@ class EditorPage {
     func tryClose(): Unit {
         if (this.text == "" && this.signature == "") {
             stackPop()
-        }
         } else {
-            // 简化：直接返回（参考端有丢弃确认框）。
             stackPop()
         }
     }
@@ -416,6 +399,7 @@ class EditorPage {
                     st.replaceEntry(e, updated)
                     break
                 }
+            }
         } else {
             let e = CardEntry(id: "${now.toUnixTimeStamp().toMilliseconds()}",
                 animalId: this.animalId, text: this.text, signature: this.signature,
