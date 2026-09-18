@@ -117,6 +117,9 @@ class CollectionPage {
     var rev: Int64 = 0
 
     @State
+    var entryIdList: Array<String> = Array<String>()
+
+    @State
     var tabIndex: Int64 = 0
 
     func revOpacity(): Float64 {
@@ -131,7 +134,9 @@ class CollectionPage {
         let self = this
         AppState.instance.addListener({ =>
             self.rev += 1
+            self.entryIdList = self.computeSortedIds()
         })
+        self.entryIdList = self.computeSortedIds()
     }
 
     func build() {
@@ -193,7 +198,7 @@ class CollectionPage {
             .onClick({ _ => this.tabIndex = idx })
     }
 
-    func sortedIds(): Array<String> {
+    func computeSortedIds(): Array<String> {
         var ids = ArrayList<String>()
         for (e in AppState.instance.sorted()) {
             ids.add(e.id)

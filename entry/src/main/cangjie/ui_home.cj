@@ -67,15 +67,19 @@ class HomePage {
     var rev: Int64 = 0
 
     @State
+    var entryIdList: Array<String> = Array<String>()
+
+    @State
     var calendarOpen: Bool = false
 
     protected override func aboutToAppear() {
         let self = this
         let f = { =>
             self.rev += 1
-            Hilog.info(1, "InkCJ", "home listener fired rev=${self.rev}")
+            self.entryIdList = self.computeSortedIds()
         }
         AppState.instance.addListener(f)
+        this.entryIdList = this.computeSortedIds()
     }
 
     func build() {
@@ -88,7 +92,7 @@ class HomePage {
                 if (AppState.instance.sorted().isEmpty()) {
                     EmptyShore(title: T.emptyTitle, hint: T.emptyHint)
                 } else {
-                    TimelineList(entryIds: this.sortedIds(), onTapEntry: { id: String =>
+                    TimelineList(entryIds: this.entryIdList, onTapEntry: { id: String =>
                         navParam = id
                         stackPush(RN_DETAIL)
                     })
@@ -116,7 +120,7 @@ class HomePage {
         return "﹀"
     }
 
-    func sortedIds(): Array<String> {
+    func computeSortedIds(): Array<String> {
         let st = AppState.instance
         let sorted = st.sorted()
         var ids = ArrayList<String>()

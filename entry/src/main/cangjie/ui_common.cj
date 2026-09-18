@@ -26,7 +26,7 @@ func weekdaySun0(d: DateTime): Int64 {
 // 时间线列表（首页 / 收集册 / 搜索共用）。
 @Component
 class TimelineList {
-    var entryIds: Array<String> = Array<String>()
+    @Prop var entryIds: Array<String>
     var onTapEntry: (String) -> Unit = { _ => }
 
     func build() {
