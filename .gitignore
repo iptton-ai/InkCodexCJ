@@ -7,3 +7,6 @@ cjnative/
 .DS_Store
 .idea/
 local.properties
+.omo/
+.v2c/
+.video_agent/
