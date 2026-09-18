@@ -11,7 +11,7 @@ python3 ~/.config/deveco/skills/cangjie-arkts-interop/arkts-invoke-cangjie/build
 - 仓颉工程必须设 `CANGJIE_SDK_HOME`/`DEVECO_HOME`，否则 hvigor 报 00303038 schema 不认 cangjieOptions
 - 6.1 SDK 无 compiler/，已 symlink: `~/.cangjie-sdk/6.1/cangjie/compiler -> build-tools`
 - stdx 已配置: `cjnative/stdx-*/.../dynamic/stdx`（cjpm.toml path-option）
-- 签名复用 `../inkzoo/ohos/signing/`（bundleName=store.yltech.inkcodex 与 Flutter 版相同）
+- 签名复用 `../inkzoo/ohos/signing/`（bundleName=store.yltech.inkcodex 与 Flutter 版相同）；仓库内 build-profile.json5 密码为空串占位，本机出包前需在 DevEco Studio 里重新配置签名
 - 模拟器: Pura 90 (127.0.0.1:5555)
 
 ## 仓颉 ArkUI 高频坑（新会话必读）

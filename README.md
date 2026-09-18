@@ -28,7 +28,7 @@ python3 ~/.config/deveco/skills/cangjie-arkts-interop/arkts-invoke-cangjie/build
 # 产物: entry/build/default/outputs/default/entry-default-signed.hap
 ```
 
-签名：`build-profile.json5` 里的 signingConfigs 指向本地调试证书（storePassword 为本机加密串，他机无效），克隆后请在 DevEco Studio 里配置自己的调试签名。
+签名：仓库里的 `build-profile.json5` **不含签名密码**（storePassword/keyPassword 为空占位，证书路径指向本仓库外的本地目录）。克隆后请打开 DevEco Studio → File → Project Structure → Signing Configs，勾选 **Automatically generate signature** 完成自动签名，即可构建出已签名的 HAP。
 
 ## 目录速览
 
